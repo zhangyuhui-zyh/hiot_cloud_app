@@ -1,10 +1,9 @@
-package com.huatec.hiot_cloud.main;
+package com.huatec.hiot_cloud.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 
 import com.huatec.hiot_cloud.utils.Constans;
 
@@ -24,16 +23,19 @@ class MainViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case Constans.MIAN_VIEWPAGER_INDEX_MESSAGE:
                 //创建消息Frament todo
-
+                fragment = MessageFragment.newInstance();
                 break;
             case Constans.MIAN_VIEWPAGER_INDEX_EQUIPMENT:
                 //创建设备的Frament
+                fragment = EquipmentFragment.newInstance();
                 break;
             case Constans.MIAN_VIEWPAGER_INDEX_SCENE:
                 //创建场景Frament
+                fragment = SceneFragment.newInstance();
                 break;
             case Constans.MIAN_VIEWPAGER_INDEX_MINE:
                 //创建我的Frament
+                fragment = MineFragment.newInstance();
                 break;
             default:
         }

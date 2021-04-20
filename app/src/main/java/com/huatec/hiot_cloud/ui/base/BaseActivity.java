@@ -1,4 +1,4 @@
-package com.huatec.hiot_cloud.base;
+package com.huatec.hiot_cloud.ui.base;
 
 import android.app.Application;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import com.huatec.hiot_cloud.injection.component.ActivityComponent;
 import com.huatec.hiot_cloud.injection.component.ApplicationComponent;
 import com.huatec.hiot_cloud.injection.component.DaggerActivityComponent;
 import com.huatec.hiot_cloud.injection.module.ActivityModule;
-import com.huatec.hiot_cloud.test.mvptest.dagger2test.DaggerPresenterComponent;
 
 /**
  * MVP架构Activity基类
@@ -30,7 +29,9 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
         super.onCreate(savedInstanceState);
         injectIndependies();
         presenter = createPresenter();
-        presenter.setView((V) this);
+        if (presenter != null){
+            presenter.setView((V) this);
+        }
     }
 
     public abstract P createPresenter();
