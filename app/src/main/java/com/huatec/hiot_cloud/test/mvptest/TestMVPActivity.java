@@ -24,7 +24,6 @@ public class TestMVPActivity extends BaseActivity<TestView, TestPresenter> imple
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getActivityComponent().inject(this);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_test_mvp);
@@ -46,6 +45,11 @@ public class TestMVPActivity extends BaseActivity<TestView, TestPresenter> imple
     @Override
     public TestPresenter createPresenter() {
         return presenter;
+    }
+
+    @Override
+    public void injectIndependies() {
+        getActivityComponent().inject(this);
     }
 
 
