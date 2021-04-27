@@ -54,8 +54,8 @@ public class TestOkHttpActivity extends AppCompatActivity {
         });
 
         //登录测试
-        Button btLogin = findViewById(R.id.btn_login);
-        btLogin.setOnClickListener(new View.OnClickListener() {
+        Button btnLogin = findViewById(R.id.btn_okhttp_login);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login("apptest","abc123","app");
