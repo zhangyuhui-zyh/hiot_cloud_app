@@ -32,7 +32,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
     private TestRetrofitService service;
 
     private  Gson gson = new Gson();
-    private EditText edToken;
+    private EditText etToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_retrofit);
 
         //取到edit_token
-        edToken = findViewById(R.id.et_token_retrofit);
+        etToken = findViewById(R.id.et_token_retrofit);
 
         //创建retrofit和service对象
         createRetrofit();
@@ -68,7 +68,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
         btnUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUserInfo("37696f31893d437db96305ce3f10234e_0ca2dcb521a244f5b3583b82c7e34271_use");
+                getUserInfo("37696f31893d437db96305ce3f10234e_43c9dd36805d4a9aadc3d3b4d8980290_use");
 
             }
         });
@@ -192,14 +192,16 @@ public class TestRetrofitActivity extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                    Log.d(TAG, "onResponse: " + response.body().string());
+                //   Log.d(TAG, "onResponse: " + response.body().string());
                 Type type = new TypeToken<ResultBase<LoginResultDTO>>() {
                 }.getType();
                 ResultBase<LoginResultDTO> loginResult = gson.fromJson(response.body().toString(), type);
-                if (loginResult != null && loginResult.getData() != null){
-                    String token = loginResult.getData().getTokenValue();
-                    edToken.setText(token);
+                if (loginResult  != null && loginResult.getData() != null){
+                    String token =  loginResult.getData().getTokenValue();
+                    etToken.setText(token);
                 }
+
+
             }
 
             @Override
