@@ -5,11 +5,7 @@ import com.huatec.hiot_cloud.test.networktest.ResultBase;
 import com.huatec.hiot_cloud.test.networktest.UserBean;
 
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -19,7 +15,8 @@ import retrofit2.http.Query;
 /**
  * 网络请求接口
  */
-public interface NetService {
+public interface NetworkService {
+    public static final String BASE_URL = "http://114.67.88.191:8080/";
 
     /**
      * 登录
