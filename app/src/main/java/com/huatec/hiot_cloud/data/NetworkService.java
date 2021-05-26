@@ -32,6 +32,9 @@ public interface NetworkService {
     Observable<ResultBase<LoginResultDTO>> login(@Query("username")String userName, @Query("password")String password,
                                                  @Query("loginCode")String loginCode);
 
+    @POST("/auth/logout")
+    Observable<ResultBase> logout(@Header("Authorization") String authorization);
+
     /**
      * 获取用户信息
      * @param authorization

@@ -18,6 +18,7 @@ import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.test.networktest.UserBean;
 import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.ui.base.BaseFragment;
+import com.huatec.hiot_cloud.ui.login.LoginActivity;
 import com.huatec.hiot_cloud.utils.ImageUtils;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -106,6 +107,8 @@ public class MineFragment extends BaseFragment<MineView, MinePresenter> implemen
             case R.id.tv_user_center_update_email:
                 break;
             case R.id.btn_logout:
+                //注销
+                presenter.logout();
                 break;
         }
     }
@@ -210,5 +213,12 @@ public class MineFragment extends BaseFragment<MineView, MinePresenter> implemen
     @Override
     public void refreshUserHead(String url) {
         ImageUtils.showCircle(getActivity(), ivHeadImage, ImageUtils.getFullUrl(url));
+    }
+
+    @Override
+    public void tokenOut() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 }
