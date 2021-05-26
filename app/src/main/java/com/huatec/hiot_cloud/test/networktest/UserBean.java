@@ -18,6 +18,11 @@ public class UserBean implements Serializable {
 
     private String userType;
 
+    /**
+     * 用户头像相对路径
+     */
+    private String img;
+
     public String getUsername() {
         return username;
     }
@@ -48,5 +53,13 @@ public class UserBean implements Serializable {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

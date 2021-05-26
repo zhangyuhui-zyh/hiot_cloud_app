@@ -127,7 +127,6 @@ public class RegisterActivity extends BaseActivity<RegisterView, RegisterPresent
 
     @Override
     public void registerSucc(String email, String password) {
-        //TODO 注册成功后，做自动登录
         presenter.login(email, password);
     }
 
