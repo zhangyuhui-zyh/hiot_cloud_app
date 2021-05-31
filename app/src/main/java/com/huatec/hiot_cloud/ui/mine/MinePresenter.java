@@ -32,7 +32,7 @@ public class MinePresenter extends BasePresenter<MineView> {
                     return;
                 }
                 //如果token失效
-                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKENOUT) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKEN_OUT) {
                     getView().tokenOut();
                     return;
                 }
@@ -64,7 +64,7 @@ public class MinePresenter extends BasePresenter<MineView> {
                     return;
                 }
                 //如果token失效
-                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKENOUT) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKEN_OUT) {
                     getView().tokenOut();
                     return;
                 }
@@ -93,7 +93,7 @@ public class MinePresenter extends BasePresenter<MineView> {
                     return;
                 }
                 //如果token失效
-                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKENOUT) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_TOKEN_OUT) {
                     getView().tokenOut();
                     return;
                 }

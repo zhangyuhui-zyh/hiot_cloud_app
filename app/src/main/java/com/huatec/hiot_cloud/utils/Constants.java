@@ -58,5 +58,5 @@ public class Constants {
     /**
      * token失效状态
      */
-    public static final int MSG_STATUS_TOKENOUT = -100;
+    public static final int MSG_STATUS_TOKEN_OUT = -100;
 }
