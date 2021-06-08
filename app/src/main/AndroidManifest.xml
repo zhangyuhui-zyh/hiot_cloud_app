@@ -21,10 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:theme">
-        <activity android:name=".ui.scan.ScanActivity">
-
-        </activity>
-        <activity android:name=".ui.register.RegisterActivity"></activity>
+        <activity android:name=".ui.devicedetail.DeviceDetailActivity"></activity>
+        <activity android:name=".ui.scan.ScanActivity"></activity>
+        <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".test.glidetest.TestGlideActivity" />
         <activity android:name=".test.TestActivity" />
         <activity android:name=".test.networktest.TestNetworkPackActivity" />
